@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .logos-slide1 {
+  display: inline-block;
+  animation: slide 35s linear infinite;
+  animation-play-state: running;
+}
+
+.logos-slide1 img {
+  height: 120px;
+  margin: 0 10px;
+}
+
+/* Keyframes for sliding animation */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Paused state for slider */
+.paused .logos-slide1 {
+  animation-play-state: paused;
+}
+
+    </style>
+
+    <div class="testimonials">
+        <div class="logos1 success" id="myContainer">
+          <div class="logos-slide1 success1">
+            <img src="https://storage.googleapis.com/msgsndr/CUqYPx0YCN46PKZsjbYb/media/66ea7174fd57297158740e08.png">
+            <img src="https://storage.googleapis.com/msgsndr/CUqYPx0YCN46PKZsjbYb/media/66ea7174fd5729a3fc740e09.png">
+            <img src="https://storage.googleapis.com/msgsndr/CUqYPx0YCN46PKZsjbYb/media/66ea7174fc1da46e58929846.png">
+            <img src="https://storage.googleapis.com/msgsndr/CUqYPx0YCN46PKZsjbYb/media/66ea717415f62c8beaca13f4.png">
+            <img src="https://storage.googleapis.com/msgsndr/CUqYPx0YCN46PKZsjbYb/media/66ea7174fc1da41984929848.png">
+            <img src="https://storage.googleapis.com/msgsndr/CUqYPx0YCN46PKZsjbYb/media/66ea7174fc1da459dc929847.png">
+            <img src="https://storage.googleapis.com/msgsndr/CUqYPx0YCN46PKZsjbYb/media/66ea7174fd57298aca740e0a.png">
+            <img src="https://storage.googleapis.com/msgsndr/CUqYPx0YCN46PKZsjbYb/media/66ea717415f62c76fdca13f5.png">
+            <img src="https://storage.googleapis.com/msgsndr/CUqYPx0YCN46PKZsjbYb/media/66ea717415f62c27a2ca13f3.png">
+            <img src="https://storage.googleapis.com/msgsndr/CUqYPx0YCN46PKZsjbYb/media/66ea717431ed942775ebba4d.png">
+          </div>
+        </div>
+      </div>
+      
+
+    <script>
+        // Clone the slider to create the continuous effect
+const success = document.querySelector(".success1").cloneNode(true);
+document.querySelector(".success").appendChild(success);
+
+// Pause the animation when the slider is clicked and held
+const slider = document.getElementById('myContainer');
+
+slider.addEventListener('mousedown', () => {
+  slider.classList.add('paused');  // Pause the animation
+});
+
+slider.addEventListener('mouseup', () => {
+  slider.classList.remove('paused');  // Resume the animation
+});
+
+slider.addEventListener('mouseleave', () => {
+  slider.classList.remove('paused');  // Ensure the animation resumes if mouse leaves
+});
+
+    </script>
+</body>
+</html>
